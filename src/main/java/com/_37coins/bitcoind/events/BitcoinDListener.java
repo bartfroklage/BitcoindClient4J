@@ -1,4 +1,4 @@
-package com._37coins.bcJsonRpc.events;
+package com._37coins.bitcoind.events;
 
 import java.io.BufferedReader;
 import java.io.IOException;

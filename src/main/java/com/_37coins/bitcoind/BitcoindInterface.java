@@ -1,17 +1,17 @@
-package com._37coins.bcJsonRpc;
+package com._37coins.bitcoind;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import com._37coins.bcJsonRpc.pojo.Account;
-import com._37coins.bcJsonRpc.pojo.Address;
-import com._37coins.bcJsonRpc.pojo.AddressInformation;
-import com._37coins.bcJsonRpc.pojo.Block;
-import com._37coins.bcJsonRpc.pojo.Info;
-import com._37coins.bcJsonRpc.pojo.LastBlock;
-import com._37coins.bcJsonRpc.pojo.Transaction;
-import com._37coins.bcJsonRpc.pojo.TransactionInput;
+import com._37coins.bitcoind.pojo.Account;
+import com._37coins.bitcoind.pojo.Address;
+import com._37coins.bitcoind.pojo.AddressInformation;
+import com._37coins.bitcoind.pojo.Block;
+import com._37coins.bitcoind.pojo.Info;
+import com._37coins.bitcoind.pojo.LastBlock;
+import com._37coins.bitcoind.pojo.Transaction;
+import com._37coins.bitcoind.pojo.TransactionInput;
 
 public interface BitcoindInterface {
 	//Add a nrequired-to-sign multisignature address to the wallet. Each key is a bitcoin address or hex-encoded public key.

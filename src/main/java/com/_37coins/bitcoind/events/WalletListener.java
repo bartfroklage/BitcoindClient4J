@@ -1,12 +1,12 @@
-package com._37coins.bcJsonRpc.events;
+package com._37coins.bitcoind.events;
 
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import com._37coins.bcJsonRpc.BitcoindClientFactory;
-import com._37coins.bcJsonRpc.BitcoindInterface;
-import com._37coins.bcJsonRpc.pojo.Transaction;
+import com._37coins.bitcoind.BitcoindClientFactory;
+import com._37coins.bitcoind.BitcoindInterface;
+import com._37coins.bitcoind.pojo.Transaction;
 
 
 public class WalletListener extends Observable implements Observer {

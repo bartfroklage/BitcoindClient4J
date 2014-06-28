@@ -1,4 +1,4 @@
-package com._37coins.bcJsonRpc.pojo;
+package com._37coins.bitcoind.pojo;
 
 import java.util.List;
 

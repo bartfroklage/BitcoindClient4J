@@ -1,10 +1,10 @@
-package com._37coins.bcJsonRpc.events;
+package com._37coins.bitcoind.events;
 
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import com._37coins.bcJsonRpc.BitcoindClientFactory;
+import com._37coins.bitcoind.BitcoindClientFactory;
 
 
 public class AlertListener extends Observable implements Observer {
