@@ -1,4 +1,4 @@
-package com._37coins;
+package org.bf;
 
 import static org.junit.Assert.assertEquals;
 
