@@ -25,6 +25,8 @@ public interface BitcoindInterface {
 	
 	public String createrawtransaction(List<TransactionInput> inputs, Map<String, BigDecimal> outputs);
 	
+	public Transaction decoderawtransaction(String hexstring);
+	
 	//Returns an object containing various state info.
 	public Info getinfo();
 	//Safely copies wallet.dat to destination, which can be a directory or a path with filename.
