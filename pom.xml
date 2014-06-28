@@ -15,14 +15,14 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>com.googlecode</groupId>
-			<artifactId>jsonrpc4j</artifactId>
-			<version>0.28</version>
-			<exclusions>
+	        <groupId>com.github.briandilley.jsonrpc4j</groupId>
+	        <artifactId>jsonrpc4j</artifactId>
+	        <version>1.1</version>
+			<exclusions>	
 				<exclusion>
 					<artifactId>jackson-core</artifactId>
 					<groupId>com.fasterxml.jackson.core</groupId>
-				</exclusion>
+				</exclusion>		
 				<exclusion>
 					<artifactId>jackson-databind</artifactId>
 					<groupId>com.fasterxml.jackson.core</groupId>
@@ -54,6 +54,12 @@
 		    <groupId>junit</groupId>
 		    <artifactId>junit</artifactId>
 		    <version>4.11</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.2.3</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
