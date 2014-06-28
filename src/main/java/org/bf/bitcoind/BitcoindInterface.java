@@ -1,17 +1,17 @@
-package com._37coins.bitcoind;
+package org.bf.bitcoind;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import com._37coins.bitcoind.pojo.Account;
-import com._37coins.bitcoind.pojo.Address;
-import com._37coins.bitcoind.pojo.AddressInformation;
-import com._37coins.bitcoind.pojo.Block;
-import com._37coins.bitcoind.pojo.Info;
-import com._37coins.bitcoind.pojo.LastBlock;
-import com._37coins.bitcoind.pojo.Transaction;
-import com._37coins.bitcoind.pojo.TransactionInput;
+import org.bf.bitcoind.pojo.Account;
+import org.bf.bitcoind.pojo.Address;
+import org.bf.bitcoind.pojo.AddressInformation;
+import org.bf.bitcoind.pojo.Block;
+import org.bf.bitcoind.pojo.Info;
+import org.bf.bitcoind.pojo.LastBlock;
+import org.bf.bitcoind.pojo.Transaction;
+import org.bf.bitcoind.pojo.TransactionInput;
 
 public interface BitcoindInterface {
 	//Add a nrequired-to-sign multisignature address to the wallet. Each key is a bitcoin address or hex-encoded public key.
@@ -19,7 +19,7 @@ public interface BitcoindInterface {
 	//If [account] is specified, assign address to [account].
 	public String addmultisigaddress(int nrequired, String keys, String account);
 	
-	//
+
 	public String createrawtransaction(List<TransactionInput> inputs, Map<String, BigDecimal> outputs);
 	
 	//Returns an object containing various state info.

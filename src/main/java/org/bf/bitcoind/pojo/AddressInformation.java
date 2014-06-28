@@ -1,4 +1,4 @@
-package com._37coins.bitcoind.pojo;
+package org.bf.bitcoind.pojo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

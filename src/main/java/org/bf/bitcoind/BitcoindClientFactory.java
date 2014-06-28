@@ -1,4 +1,4 @@
-package com._37coins.bitcoind;
+package org.bf.bitcoind;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,10 +11,10 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.UUID;
 
+import org.bf.bitcoind.exception.BitcoindExceptionResolver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com._37coins.bitcoind.exception.BitcoindExceptionResolver;
 import com.googlecode.jsonrpc4j.Base64;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;

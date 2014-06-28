@@ -1,4 +1,4 @@
-package com._37coins.bitcoind.events;
+package org.bf.bitcoind.events;
 
 import java.io.BufferedReader;
 import java.io.IOException;

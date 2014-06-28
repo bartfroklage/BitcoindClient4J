@@ -1,12 +1,12 @@
-package com._37coins.bitcoind.events;
+package org.bf.bitcoind.events;
 
 import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
-import com._37coins.bitcoind.BitcoindClientFactory;
-import com._37coins.bitcoind.BitcoindInterface;
-import com._37coins.bitcoind.pojo.Block;
+import org.bf.bitcoind.BitcoindClientFactory;
+import org.bf.bitcoind.BitcoindInterface;
+import org.bf.bitcoind.pojo.Block;
 
 
 public class BlockListener extends Observable implements Observer {

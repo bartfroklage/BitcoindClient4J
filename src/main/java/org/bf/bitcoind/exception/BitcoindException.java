@@ -1,4 +1,4 @@
-package com._37coins.bitcoind.exception;
+package org.bf.bitcoind.exception;
 
 public class BitcoindException extends Throwable {
 
