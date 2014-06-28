@@ -8,11 +8,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.UUID;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com._37coins.bcJsonRpc.exception.BitcoindExceptionResolver;
 import com.googlecode.jsonrpc4j.Base64;
 import com.googlecode.jsonrpc4j.JsonRpcHttpClient;
 import com.googlecode.jsonrpc4j.ProxyUtil;
@@ -27,8 +29,13 @@ public class BitcoindClientFactory {
 	private static String OS = System.getProperty("os.name").toLowerCase();
 
 	private static String convertStream(java.io.InputStream is) {
-	    java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
-	    return s.hasNext() ? s.next() : "";
+		Scanner s = new Scanner(is);
+		s.useDelimiter("\\A");
+	    try {	    		
+	    	return s.hasNext() ? s.next() : "";
+	    } finally {
+	    	s.close();	    	
+	    }
 	}
 
 	private static boolean isWindows() {
@@ -58,6 +65,7 @@ public class BitcoindClientFactory {
 		Map<String, String> headers = new HashMap<>(1);
 		headers.put("Authorization", "Basic " + cred);
 		client = new JsonRpcHttpClient(url, headers);
+		client.setExceptionResolver(new BitcoindExceptionResolver());
 	}
 	
 	public BitcoindClientFactory(String path, final List<String> cmd) throws IOException{
@@ -127,9 +135,12 @@ public class BitcoindClientFactory {
 	}
 	
 	public BitcoindInterface getClient() {
+				
 		return ProxyUtil.createClientProxy(
 				BitcoindInterface.class.getClassLoader(),
 				BitcoindInterface.class, client);
+		
+	
 	}
 
 }

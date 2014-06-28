@@ -11,14 +11,16 @@ import com._37coins.bcJsonRpc.pojo.Block;
 import com._37coins.bcJsonRpc.pojo.Info;
 import com._37coins.bcJsonRpc.pojo.LastBlock;
 import com._37coins.bcJsonRpc.pojo.Transaction;
-
-
+import com._37coins.bcJsonRpc.pojo.TransactionInput;
 
 public interface BitcoindInterface {
 	//Add a nrequired-to-sign multisignature address to the wallet. Each key is a bitcoin address or hex-encoded public key.
 	public String addmultisigaddress(int nrequired, String keys);
 	//If [account] is specified, assign address to [account].
 	public String addmultisigaddress(int nrequired, String keys, String account);
+	
+	//
+	public String createrawtransaction(List<TransactionInput> inputs, Map<String, BigDecimal> outputs);
 	
 	//Returns an object containing various state info.
 	public Info getinfo();
