@@ -11,7 +11,10 @@ import org.bf.bitcoind.pojo.Block;
 import org.bf.bitcoind.pojo.Info;
 import org.bf.bitcoind.pojo.LastBlock;
 import org.bf.bitcoind.pojo.MultisigInformation;
+import org.bf.bitcoind.pojo.SignRawTransactionInput;
+import org.bf.bitcoind.pojo.SignRawTransactionResponse;
 import org.bf.bitcoind.pojo.Transaction;
+import org.bf.bitcoind.pojo.TransactionInformation;
 import org.bf.bitcoind.pojo.TransactionInput;
 
 public interface BitcoindInterface {
@@ -19,13 +22,16 @@ public interface BitcoindInterface {
 	public String addmultisigaddress(int nrequired, String keys);
 	//If [account] is specified, assign address to [account].
 	public String addmultisigaddress(int nrequired, String keys, String account);
-	
-				   
+					   
 	public MultisigInformation createmultisig(int nrequired, List<String> keys); 
 	
 	public String createrawtransaction(List<TransactionInput> inputs, Map<String, BigDecimal> outputs);
 	
-	public Transaction decoderawtransaction(String hexstring);
+	public TransactionInformation decoderawtransaction(String rawtransaction);
+	
+	public SignRawTransactionResponse signrawtransaction(String rawtransaction, List<SignRawTransactionInput>inputs, List<String>privateKeys);
+	
+	public String sendrawtransaction(String rawtransaction);
 	
 	//Returns an object containing various state info.
 	public Info getinfo();

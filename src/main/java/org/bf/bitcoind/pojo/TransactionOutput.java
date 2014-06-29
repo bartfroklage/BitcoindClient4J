@@ -7,20 +7,27 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
 public class TransactionOutput {
-	private String address;
-	private BigDecimal amount;
 	
-	public TransactionOutput(String address, BigDecimal amount) {
-	    this.address = address;
-        this.amount = amount;
-	}
-	    
+	private long n;
+	private BigDecimal value;
+	private ScriptPubKey scriptPubKey;
 	
-	public String getAddress() {
-		return address;
+	public long getN() {
+		return n;
 	}
-
-	public BigDecimal getAmount() {
-		return amount;
+	public void setN(long n) {
+		this.n = n;
+	}
+	public BigDecimal getValue() {
+		return value;
+	}
+	public void setValue(BigDecimal value) {
+		this.value = value;
+	}
+	public ScriptPubKey getScriptPubKey() {
+		return scriptPubKey;
+	}
+	public void setScriptPubKey(ScriptPubKey scriptPubKey) {
+		this.scriptPubKey = scriptPubKey;
 	}
 }
