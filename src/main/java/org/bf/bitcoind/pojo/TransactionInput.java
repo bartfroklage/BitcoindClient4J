@@ -7,9 +7,27 @@ import com.fasterxml.jackson.annotation.JsonInclude.Include;
 public class TransactionInput {
 
 	private String txid;
-	private int vout;
+	private long vout;
 	private ScriptSignature scriptSig;
 	private long sequence; 
+    private String redeemScript;
+    public String getRedeemScript() {
+		return redeemScript;
+	}
+
+	public void setRedeemScript(String redeemScript) {
+		this.redeemScript = redeemScript;
+	}
+
+	public String getScriptPubKey() {
+		return scriptPubKey;
+	}
+
+	public void setScriptPubKey(String scriptPubKey) {
+		this.scriptPubKey = scriptPubKey;
+	}
+
+	private String scriptPubKey; 
 	
 	public long getSequence() {
 		return sequence;
@@ -23,7 +41,7 @@ public class TransactionInput {
 		
 	}
 	
-	public TransactionInput(String txid, int vout) {
+	public TransactionInput(String txid, long vout) {
 	    this.txid = txid;
         this.vout = vout;
 	}
@@ -36,11 +54,11 @@ public class TransactionInput {
 		this.txid = txid;
 	}
 
-	public int getVout() {
+	public long getVout() {
 		return vout;
 	}
 
-	public void setVout(int vout) {
+	public void setVout(long vout) {
 		this.vout = vout;
 	}
 

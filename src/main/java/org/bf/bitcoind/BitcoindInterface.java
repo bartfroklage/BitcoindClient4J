@@ -16,6 +16,7 @@ import org.bf.bitcoind.pojo.SignRawTransactionResponse;
 import org.bf.bitcoind.pojo.Transaction;
 import org.bf.bitcoind.pojo.TransactionInformation;
 import org.bf.bitcoind.pojo.TransactionInput;
+import org.bf.bitcoind.pojo.Unspent;
 
 public interface BitcoindInterface {
 	//Add a nrequired-to-sign multisignature address to the wallet. Each key is a bitcoin address or hex-encoded public key.
@@ -32,6 +33,8 @@ public interface BitcoindInterface {
 	public SignRawTransactionResponse signrawtransaction(String rawtransaction, List<SignRawTransactionInput>inputs, List<String>privateKeys);
 	
 	public String sendrawtransaction(String rawtransaction);
+	
+	public List<Unspent> listunspent();
 	
 	//Returns an object containing various state info.
 	public Info getinfo();
